@@ -141,6 +141,48 @@ namespace CSharpAdvance
             {
                 Console.WriteLine(item.Key + "\t" + item.Value);
             }
+
+            //Stack
+            // LIFO
+            // Store a list of item
+            // Push = add first
+            // Pop = remove first
+            // Peek = get first
+            // Example
+            Stack stack = new Stack();
+            // Capacity
+            Stack capacityStack = new Stack(10);
+            // Can convert ArrayList to Stack
+            ArrayList arrayStack1 = new ArrayList();
+            arrayStack1.Add(1);
+            arrayStack1.Add(2);
+            arrayStack1.Add(3);
+            arrayStack1.Add(4);
+            arrayStack1.Add(5);
+            arrayStack1.Add(6);
+
+            Stack arrayStack2 = new Stack(arrayStack1);
+            //
+            Stack exampleStack = new Stack();
+            exampleStack.Push("Bac");
+            exampleStack.Push("Nam");
+            exampleStack.Push("Dong");
+            exampleStack.Push("Tay");
+
+            foreach(var item in exampleStack)
+            {
+                Console.WriteLine(item.ToString());
+            }
+            //Count
+            Console.WriteLine("Count Stack:" + exampleStack.Count);
+            // Peek
+            Console.WriteLine("Peek:" + exampleStack.Peek());
+            // Pop
+            Console.WriteLine("Popping");
+            exampleStack.Pop();
+            Console.WriteLine("Count: " + exampleStack.Count);
+
+
         }
 
         class Person {
