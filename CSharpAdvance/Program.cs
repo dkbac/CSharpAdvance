@@ -87,6 +87,34 @@ namespace CSharpAdvance
             {
                 Console.WriteLine("Name: {0}, Age: {1}", person.Name, person.Age);
             }
+
+            //HashTable
+            // a collection store and manage a list of items using Key-Value
+            // Empty
+            Hashtable hashTable = new Hashtable();
+            // With Capacity
+            Hashtable capacityHashTable = new Hashtable(10);
+            // Example
+            hashTable.Add("Bac", "Dau Khac Bac");
+            hashTable.Add("Nam", "Dau Khac Nam");
+            hashTable.Add("Dong", "Dau Khac Dong");
+            // A Key-Value in HashTable is a dictionary entry.
+            Console.WriteLine("Hash Table");
+            // If the Key is not add yet then return null, not through exception.
+            Console.WriteLine("Access a no existing value: " + hashTable["Tay"]);
+            // Update the element
+            hashTable["Bac"] = "Awsome";
+            // If the Key is not exist yet then add ann assign the value.
+            hashTable["Tay"] = "Dau Khac Tay";
+            // Id we add a key already exist, it will through the exception.
+            if (!hashTable.ContainsKey("Tay"))
+                hashTable.Add("Tay", "Tay Doc");
+            // Access each hash table element via DictionaryEntry
+            foreach(DictionaryEntry item in hashTable)
+            {
+                Console.WriteLine(item.Key + "\t" + item.Value);
+                Console.WriteLine(hashTable[item.Key]);
+            }
         }
 
         class Person {
