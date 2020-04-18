@@ -222,6 +222,13 @@ namespace CSharpAdvance
             exampleQueue.Dequeue();
             Console.WriteLine("Count: " + exampleQueue.Count);
 
+            //BitArray
+            // Store a list of bit by true/false
+            // Using this instead of bool[] because it save the memory
+            // Canot define a BitArray empty
+            BitArray bitArray = new BitArray(10);
+            // Change the default value to true
+            BitArray trueBitArray = new BitArray(10, true);
 
         }
 
