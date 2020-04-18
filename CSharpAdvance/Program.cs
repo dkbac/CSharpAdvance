@@ -182,6 +182,46 @@ namespace CSharpAdvance
             exampleStack.Pop();
             Console.WriteLine("Count: " + exampleStack.Count);
 
+            //Queue
+            // FIFO
+            // Store a list of item
+            // Enqueue
+            // Dequeue
+            // Peek
+            // Example
+            Queue queue = new Queue();
+            // Capacity
+            Queue capacityQueue = new Queue(10);
+            // Can convert from an arraylist
+            ArrayList arrayQueue1 = new ArrayList();
+            arrayStack1.Add(1);
+            arrayStack1.Add(2);
+            arrayStack1.Add(3);
+            arrayStack1.Add(4);
+            arrayStack1.Add(5);
+            arrayStack1.Add(6);
+
+            Queue arrayQueue2 = new Queue(arrayQueue1);
+            //
+            Queue exampleQueue = new Queue();
+            exampleQueue.Enqueue("Bac");
+            exampleQueue.Enqueue("Nam");
+            exampleQueue.Enqueue("Dong");
+            exampleQueue.Enqueue("Tay");
+
+            foreach (var item in exampleQueue)
+            {
+                Console.WriteLine(item.ToString());
+            }
+            //Count
+            Console.WriteLine("Count Stack:" + exampleQueue.Count);
+            // Peek
+            Console.WriteLine("Peek:" + exampleQueue.Peek());
+            // Pop
+            Console.WriteLine("Popping");
+            exampleQueue.Dequeue();
+            Console.WriteLine("Count: " + exampleQueue.Count);
+
 
         }
 
