@@ -115,6 +115,32 @@ namespace CSharpAdvance
                 Console.WriteLine(item.Key + "\t" + item.Value);
                 Console.WriteLine(hashTable[item.Key]);
             }
+
+            //SortedList
+            // A collection store by Key-Value
+            // Similar with HasTable but sorted by Key
+            // Need new
+            SortedList sortedList = new SortedList();
+            // Capacity
+            SortedList capacitySortedList = new SortedList(10);
+            // Copy from other sortedList
+            SortedList copySortedList = new SortedList(sortedList);
+            // Can define how to sort via the interface IComparer
+            SortedList customSortedList = new SortedList(new PersonComparer());
+            // Can copy from other sorted list and define how to sort
+            SortedList copyCustomSortedList = new SortedList(capacitySortedList, new PersonComparer());
+            //Example
+            SortedList exampleSortedList = new SortedList(new PersonComparer());
+            exampleSortedList.Add(new Person("Dau Khac Bac", 25), "Developer");
+            exampleSortedList.Add(new Person("Dau Khac Linh", 38), "Teacher");
+            exampleSortedList.Add(new Person("Dau Khac Manh", 34), "Developer");
+            exampleSortedList.Add(new Person("Dau Khac Ngoc", 35), "Farmer");
+
+            Console.WriteLine("Sorted List");
+            foreach (DictionaryEntry item in exampleSortedList)
+            {
+                Console.WriteLine(item.Key + "\t" + item.Value);
+            }
         }
 
         class Person {
@@ -125,6 +151,11 @@ namespace CSharpAdvance
             {
                 this.Name = name;
                 this.Age = age;
+            }
+
+            public override string ToString()
+            {
+                return this.Name + "-" + this.Age;
             }
         }
 
